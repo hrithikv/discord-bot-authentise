@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const axios = require('axios');
 const apiKey = process.env.MEETUP_API_KEY_AUTHENTISE; 
 
+
 function getMonth(month) {
 	let monthNames = [
 		'Jan', 'Feb', 'Mar',
