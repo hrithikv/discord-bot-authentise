@@ -1,7 +1,7 @@
 {
 	"name": "authentise-bot",
 	"version": "1.0.0",
-	"description": "Authentise Engineering Bot",
+	"description": "Authentise Bot",
 	"main": "index.js",
 	"authors": "Hrithik",
 	"dependencies": {
