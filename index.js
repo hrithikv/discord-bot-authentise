@@ -1,10 +1,8 @@
 const Discord = require('discord.js');
-// ytdl provides an API to get a readable stream for a YouTube video
 const ytdl = require('ytdl-core');
 const prefix = '$';
 const fs = require('fs');
 
-// Create client and login
 const client =  new  Discord.Client ();
 
 client.commands = new Discord.Collection();
@@ -35,7 +33,7 @@ client.on('message', async message => {
   if (message.content.substring(0, 1) === `${prefix}`) {
   	let args = message.content.substring(1).split(' ');
     let cmd = args[0];       
-    args = args.splice(1); // arguments array after the command
+    args = args.splice(1); 
     let cmdFile = client.commands.get(cmd);
 
     if (cmdFile) cmdFile.run(client, message, args);
@@ -44,4 +42,4 @@ client.on('message', async message => {
 
 });
 
-client.login(process.env.AUTHENTISE_ENGINEERING_DISCORD_BOT_TOKEN);
+client.login(process.env.DISCORD_BOT_AUTHENTISE_TOKEN);
