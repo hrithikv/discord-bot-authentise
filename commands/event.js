@@ -23,7 +23,7 @@ module.exports.run = async(client, message, args) => {
 	axios.get(`https://api.meetup.com/2/open_events?text=${texts}&and_text=true&&time=,1w&key=${apiKey}&page=5`, {
 	}).then(res => {
 		if (res.data.results.length)
-			message.channel.send(`Meetups happening within the next week related to ${texts.replace(/\s/g, ', ')}:`)
+			message.channel.send(`Meetups within a week related to ${texts.replace(/\s/g, ', ')}:`)
 		
 		for (let i = 1; i <= 5 && i <= res.data.results.length; i++) {
 			let r = res.data.results[i];			
