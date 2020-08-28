@@ -1,1 +1,1 @@
-# authentise-engineering-discord-bot
+# Authentise Discord Bot
