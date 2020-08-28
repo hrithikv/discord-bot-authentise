@@ -7,7 +7,7 @@ module.exports.run = async(client, message, args) => {
       })
       .catch();
   } else {
-    message.reply('First join a voice channel first!');
+    message.reply('First join a voice channel!');
   }
 }
 
