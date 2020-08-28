@@ -22,7 +22,7 @@ module.exports.run = async(client, message, args) => {
   let channel = message.member.voiceChannel;
 
   if (args.length === 0) {
-    message.reply("Sorry, this command requires a youtube video url to play. :P")
+    message.reply("This command requires a youtube video url to play")
   } else {
 	  if (channel) {
     	channel.join()
@@ -39,7 +39,7 @@ module.exports.run = async(client, message, args) => {
         console.log(err)
       });
     } else {
-      message.reply('You need to join a voice channel first!');
+      message.reply('First join a voice channel!');
     }
   }
 }
