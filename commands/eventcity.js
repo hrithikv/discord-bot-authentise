@@ -20,13 +20,12 @@ function getCity(city) {
 	return axios.get(`https://api.meetup.com/2/cities?query=${city}&key=${apiKey}`, {});
 }
 module.exports.run = async(client, message, args) => {
-	// First Message before executing 
 	let texts = args.join(' ')
 	message.channel.send(`**Searching events in :mag_right:** ${texts}`);
 	let query = await getCity(texts);
 	const result = query.data.results;
 	if(result.length == 0) {
-		message.channel.send(`**Unable to find such city -** ${texts}`);
+		message.channel.send(`**Not able to find -** ${texts}`);
 		return;
 	}
 	const { city, country } = result[0];
@@ -34,7 +33,7 @@ module.exports.run = async(client, message, args) => {
 	axios.get(`https://api.meetup.com/2/open_events?city=${city}&country=${country}&time=,1w&key=${apiKey}&page=5`, {
 	}).then(res => {
 		if (res.data.results.length)
-			message.channel.send(`Meetups happening within the next week in ${texts.replace(/\s/g, ', ')}:`)
+			message.channel.send(`Next week in ${texts.replace(/\s/g, ', ')}:`)
 		
 		for (let i = 1; i <= 5 && i <= res.data.results.length; i++) {
 			let r = res.data.results[i];			
