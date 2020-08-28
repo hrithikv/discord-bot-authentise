@@ -3,11 +3,11 @@ module.exports.run = async(client, message, args) => {
   if (channel) {
     channel.join()
       .then(connection => { 
-        message.channel.send('I have successfully connected to the channel!');
+        message.channel.send('Connected to the channel!');
       })
       .catch();
   } else {
-    message.reply('You need to join a voice channel first!');
+    message.reply('First join a voice channel first!');
   }
 }
 
